@@ -1,0 +1,193 @@
+/* EndeavourOS Forum Theme — structural tweaks
+   Colors live in common/color_definitions.scss.
+   Both blocks here switch automatically with Discourse's $is-dark scheme. */
+
+/* ---------- Dark: navy panel look ---------- */
+@if $is-dark {
+  body.dark-scheme,
+  html.dark-scheme body {
+    background-color: var(--eos-bg-page);
+
+    /* Header */
+    .d-header {
+      background-color: var(--eos-bg-header);
+      box-shadow: none;
+      border-bottom: 1px solid var(--eos-border);
+    }
+
+    /* Buttons: purple like the website */
+    .btn-primary,
+    #create-topic {
+      background-color: var(--eos-accent);
+      border-color: var(--eos-accent);
+      color: #ffffff;
+      &:hover,
+      &.btn-hover {
+        background-color: var(--eos-accent-hover);
+        border-color: var(--eos-accent-hover);
+      }
+    }
+
+    /* Secondary buttons stay flat/dark */
+    .btn-default {
+      background-color: var(--eos-bg-card);
+      border-color: var(--eos-border);
+      color: var(--eos-text);
+      &:hover {
+        background-color: #1a1544;
+      }
+    }
+
+    /* Links */
+    a {
+      color: var(--eos-link);
+      &:visited {
+        color: var(--eos-link-visited);
+      }
+    }
+    .topic-list a.title,
+    .raw-topic-link {
+      color: var(--eos-title);
+      &:hover {
+        color: var(--eos-link);
+      }
+    }
+
+    /* Topic list & cards */
+    .topic-list th {
+      border-bottom-color: var(--eos-border);
+    }
+    .topic-list td {
+      border-top-color: #171238;
+    }
+    .topic-list-item:hover,
+    .latest-topic-list-item:hover,
+    .category-box:hover {
+      background-color: var(--eos-bg-card);
+    }
+
+    /* Category badges: soft purple */
+    .badge-category__wrapper .badge-category {
+      background-color: #2a1a55;
+      color: #c9b8f0;
+    }
+
+    /* Code blocks */
+    pre code,
+    code {
+      background-color: #120d33;
+      border: 1px solid var(--eos-border);
+      border-radius: 6px;
+    }
+
+    /* Active tabs */
+    .nav-pills .nav-link.active,
+    .nav-pills > li > a.active {
+      background-color: var(--eos-accent);
+      color: #ffffff;
+    }
+
+    /* Sidebar section headers */
+    .sidebar-section-header {
+      color: var(--eos-text-muted);
+    }
+  }
+}
+
+/* ---------- Light: lavender panel look ---------- */
+@if not $is-dark {
+  body:not(.dark-scheme) {
+    background-color: var(--eos-bg-page);
+
+    /* Header: light surface, dark text */
+    .d-header {
+      background-color: var(--eos-bg-card);
+      box-shadow: none;
+      border-bottom: 1px solid var(--eos-border);
+    }
+
+    /* Buttons: purple like the website */
+    .btn-primary,
+    #create-topic {
+      background-color: var(--eos-accent);
+      border-color: var(--eos-accent);
+      color: #ffffff;
+      &:hover,
+      &.btn-hover {
+        background-color: var(--eos-accent-hover);
+        border-color: var(--eos-accent-hover);
+      }
+    }
+
+    /* Secondary buttons: flat, slightly set off */
+    .btn-default {
+      background-color: var(--eos-bg-card);
+      border-color: var(--eos-border);
+      color: var(--eos-text);
+      &:hover {
+        background-color: var(--eos-bg-alt);
+      }
+    }
+
+    /* Links */
+    a {
+      color: var(--eos-accent);
+      &:visited {
+        color: #5b2e8c;
+      }
+    }
+    .topic-list a.title,
+    .raw-topic-link {
+      color: var(--eos-title);
+      &:hover {
+        color: var(--eos-accent);
+      }
+    }
+
+    /* Topic list & cards */
+    .topic-list th {
+      border-bottom-color: var(--eos-border);
+    }
+    .topic-list td {
+      border-top-color: #beb9ca;
+    }
+    .topic-list-item:hover,
+    .latest-topic-list-item:hover,
+    .category-box:hover {
+      background-color: var(--eos-bg-card);
+    }
+
+    /* Category badges */
+    .badge-category__wrapper .badge-category {
+      background-color: #e0d6ef;
+      color: #4a2380;
+    }
+
+    /* Code blocks */
+    pre code,
+    code {
+      background-color: #c2bfcc;
+      border: 1px solid var(--eos-border);
+      border-radius: 6px;
+    }
+
+    /* Active tabs */
+    .nav-pills .nav-link.active,
+    .nav-pills > li > a.active {
+      background-color: var(--eos-accent);
+      color: #ffffff;
+    }
+
+    /* Sidebar section headers */
+    .sidebar-section-header {
+      color: var(--eos-text-muted);
+    }
+  }
+}
+
+/* ---------- both variants: soft transitions ---------- */
+.btn,
+.badge-category,
+.d-header {
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}

@@ -1,0 +1,9 @@
+{
+  "name": "EndeavourOS Forum Theme",
+  "about_url": "https://github.com/endeavouros-team/discourse-theme",
+  "license_url": "https://github.com/endeavouros-team/discourse-theme/blob/main/LICENSE",
+  "authors": "joekamprad",
+  "theme_version": "1.0.0",
+  "minimum_discourse_version": "3.1.0",
+  "component": true
+}
