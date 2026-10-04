@@ -459,3 +459,12 @@
 .d-header {
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
+
+/* Palette-independent spacing (from old theme overrides) */
+.post-controls > button:first-child {
+  margin-left: 5px;
+}
+.latest-topic-list .table-heading,
+.top-topic-list .table-heading {
+  padding: 12px 5px;
+}
