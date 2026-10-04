@@ -25,10 +25,14 @@ via Discourse's `$is-dark` mechanism.
    → **From a git repository** → paste the repo URL into
    "Repository containing theme":
    `https://github.com/endeavouros-team/discourse-theme`
-2. Add the component to the active default theme
+   
+   <img width="1102" height="312" alt="repo-theme-adding" src="https://github.com/user-attachments/assets/6af93a35-bcbb-45b1-962f-0f8f9ceacb7d" />
+   
+3. Add the component to the active default theme
    (Edit on the theme → Components → add).
-3. Keep the default color schemes (both Dark *and* Light) enabled — the
+4. Keep the default color schemes (both Dark *and* Light) enabled — the
    component overrides the variables depending on `$is-dark`.
+
 
 ## Customizing
 
