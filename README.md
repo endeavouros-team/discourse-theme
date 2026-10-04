@@ -3,8 +3,9 @@
 Theme component for forum.endeavouros.org, derived from the 2026 redesign of
 endeavouros.com and the wiki.
 
-Two variants: Dark Navy and Light Lavender switch automatically
-via Discourse's `$is-dark` mechanism.
+One component, two variants: Dark Navy and Light Lavender switch automatically
+via Discourse's `$is-dark` mechanism — install it, add it to the active theme,
+done. No Dark Reader needed.
 
 ## Palette
 
@@ -21,10 +22,12 @@ via Discourse's `$is-dark` mechanism.
 
 ## Installation
 
-1. Admin → Customize → Themes → **Install → From a repo**
+1. Admin → Appearance → **Themes & components** → **Install** (top right)
+   → **From a git repository** → paste the repo URL into
+   "Repository containing theme":
    `https://github.com/endeavouros-team/discourse-theme`
 2. Add the component to the active default theme
-   (gear icon on the theme → Components → add).
+   (Edit on the theme → Components → add).
 3. Keep the default color schemes (both Dark *and* Light) enabled — the
    component overrides the variables depending on `$is-dark`.
 
@@ -44,3 +47,5 @@ All colors are centralized in `common/color_definitions.scss` under
 This theme is part of the EndeavourOS project.
 
 GPL-3.0 — see [LICENSE](LICENSE).
+
+Deutsche Anleitung: [README.de.md](README.de.md)
