@@ -3,9 +3,8 @@
 Theme component for forum.endeavouros.org, derived from the 2026 redesign of
 endeavouros.com and the wiki.
 
-One component, two variants: Dark Navy and Light Lavender switch automatically
-via Discourse's `$is-dark` mechanism — install it, add it to the active theme,
-done. No Dark Reader needed.
+Dark Navy and Light Lavender switch automatically
+via Discourse's `$is-dark` mechanism.
 
 ## Palette
 
@@ -47,5 +46,3 @@ All colors are centralized in `common/color_definitions.scss` under
 This theme is part of the EndeavourOS project.
 
 GPL-3.0 — see [LICENSE](LICENSE).
-
-Deutsche Anleitung: [README.de.md](README.de.md)
