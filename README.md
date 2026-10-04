@@ -35,6 +35,8 @@ via Discourse's `$is-dark` mechanism.
 All colors are centralized in `common/color_definitions.scss` under
 `:root { --eos-… }` (one block per variant).
 
+https://github.com/endeavouros-team/discourse-theme/blob/main/common/color_definitions.scss
+
 ## Files
 
 - `about.json` — theme metadata
