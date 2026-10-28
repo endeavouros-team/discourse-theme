@@ -1,6 +1,7 @@
 # EndeavourOS Discourse Theme — Dark EndeavourOS Purple
 
 A custom dark theme for Discourse, for the EndeavourOS forum.
+## [WIP] - help needed - feel free to contribute
 
 ## Palette (`about.json`)
 
