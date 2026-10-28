@@ -2,7 +2,7 @@
 
 A custom dark theme for Discourse, for the EndeavourOS forum.
 ## [WIP] - help needed - feel free to contribute
-
+<img src="https://raw.githubusercontent.com/endeavouros-team/discourse-theme/refs/heads/main/preview.png" width="680" >
 ## Palette (`about.json`)
 
 | Role / Key | Hex | Description |
