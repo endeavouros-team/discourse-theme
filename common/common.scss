@@ -1,470 +1,128 @@
-/* EndeavourOS Forum Theme — structural tweaks
-   Colors live in common/color_definitions.scss.
-   Both blocks here switch automatically with Discourse's $is-dark scheme.
-   Overrides carried over from the previous "Dark/Light Endeavour" themes,
-   re-coloured to the 2026 website palette. */
+/* Define CSS variables for strict layer enforcement */
+:root {
+  --d-sidebar-background: #1c0e2f;
+  --secondary: #150a24;
+  --header-background: #341b5f;
+  --tertiary: #3c305d;
+}
 
-/* ---------- Dark: navy panel look ---------- */
-@media all { /* dark */
-  body.dark-scheme,
-  html.dark-scheme body {
-    background-color: var(--eos-bg-page);
+/* Sidebar and navigation background layers */
+.d-sidebar,
+.sidebar-wrapper,
+.sidebar-container,
+.navigation-container,
+.category-sidebar {
+  background-color: #1c0e2f !important;
+}
 
-    /* Header */
-    .d-header {
-      background-color: var(--eos-bg-header);
-      box-shadow: none;
-      border-bottom: 1px solid var(--eos-border);
-    }
+/* Main content and body background layers */
+body,
+#main-outlet {
+  background-color: #150a24 !important;
+}
 
-    /* Buttons: purple like the website */
-    .btn-primary,
-    #create-topic {
-      background-color: var(--eos-accent);
-      border-color: var(--eos-accent);
-      color: #ffffff;
-      &:hover,
-      &.btn-hover {
-        background-color: var(--eos-accent-hover);
-        border-color: var(--eos-accent-hover);
-      }
-    }
+/* Header background layer */
+.d-header {
+  background-color: #341b5f !important;
+}
 
-    /* Secondary buttons stay flat/dark */
-    .btn-default {
-      background-color: var(--eos-bg-card);
-      border-color: var(--eos-border);
-      color: var(--eos-text);
-      &:hover {
-        background-color: #1a1544;
-      }
-    }
+/* Override all default and grey buttons to prevent grey rendering */
+.btn.btn-default,
+.select-kit .select-kit-header,
+button.btn-default,
+.post-controls .actions .btn {
+  background-color: #3c305d !important;
+  color: #fafafa !important;
+  border-color: #7c62b3 !important;
 
-    /* Links */
-    a {
-      color: var(--eos-link);
-      &:visited {
-        color: var(--eos-link-visited);
-      }
-    }
-    .topic-list a.title,
-    .raw-topic-link {
-      color: var(--eos-title);
-      &:hover {
-        color: var(--eos-link);
-      }
-    }
+  &:hover {
+    background-color: #4c3d75 !important;
+    color: #fafafa !important;
+  }
 
-    /* Topic list & cards */
-    .topic-list th {
-      border-bottom-color: var(--eos-border);
-    }
-    .topic-list td {
-      border-top-color: #171238;
-    }
-    .topic-list-item:hover,
-    .latest-topic-list-item:hover,
-    .category-box:hover {
-      background-color: var(--eos-bg-card);
-    }
-
-    /* Category badges: soft purple */
-    .badge-category__wrapper .badge-category {
-      background-color: #2a1a55;
-      color: #c9b8f0;
-    }
-    .badge-wrapper.bullet span.badge-category {
-      color: var(--eos-accent);
-    }
-    .category-list .category .badge-notification {
-      background-color: transparent;
-      color: var(--eos-accent);
-    }
-    .category-list th {
-      color: var(--eos-accent);
-    }
-    .categories-list .category .category-description {
-      margin-top: 0.5em;
-      overflow: hidden;
-      color: var(--eos-text-muted);
-    }
-    .list-cell,
-    .table-heading,
-    .category-list td,
-    .category-list th {
-      color: var(--eos-accent);
-    }
-
-    /* User names & titles */
-    .names span a {
-      color: var(--eos-accent);
-    }
-    .names .fa {
-      font-size: 0.8706em;
-      color: var(--eos-accent);
-    }
-    .names .new_user a,
-    .names .user-title,
-    .names .user-title a {
-      color: var(--eos-accent);
-    }
-
-    /* Flat buttons & post controls */
-    .btn-flat .d-icon {
-      color: var(--eos-text-muted);
-    }
-    nav.post-controls .actions a,
-    nav.post-controls .actions button {
-      color: var(--eos-text-muted);
-      margin-right: 2px;
-      display: inline-block;
-    }
-
-    /* Reaction buttons (post-retort) */
-    .post-retort {
-      background: var(--secondary);
-      color: #ffffff;
-      border-color: transparent;
-      border-radius: 5px;
-      padding: 6px;
-      &:hover {
-        background: var(--primary-low);
-      }
-      span {
-        background: var(--secondary);
-        color: #ffffff;
-        &::after {
-          display: none;
-        }
-      }
-      .post-retort__tooltip {
-        background: var(--secondary-high);
-        color: #ffffff;
-        z-index: 10;
-      }
-    }
-    .discourse-reactions-picker {
-      height: 35vh;
-      overflow: auto;
-      padding: 0 0.33em;
-    }
-
-    /* Timeline */
-    .timeline-container .topic-timeline .now-date,
-    .timeline-container .topic-timeline .start-date,
-    .timeline-container .topic-timeline .timeline-ago {
-      color: var(--eos-text-muted);
-    }
-    .timeline-container .topic-timeline .timeline-handle {
-      border-radius: 0.8em;
-      width: 0.35em;
-      background-color: var(--eos-accent);
-      height: 100%;
-      float: left;
-      z-index: 2;
-    }
-
-    /* Topic-list separators: purple strip like before */
-    .topic-list .topic-list-item-separator td {
-      border-bottom: 1px solid var(--eos-accent);
-      span {
-        background-color: var(--eos-accent);
-        color: #ffffff;
-      }
-    }
-
-    /* "Visited" marker line */
-    .small-action.topic-post-visited .topic-post-visited-line {
-      text-align: center;
-      border-bottom: 1px solid var(--eos-accent);
-      line-height: 0.1em;
-      margin: 1rem 0px;
-      width: 100%;
-      .topic-post-visited-message {
-        background-color: var(--secondary);
-        color: var(--eos-accent);
-        font-size: var(--font-down-1);
-        padding: 0 8px;
-      }
-    }
-
-    /* User secondary nav & preference hints */
-    .user-secondary-navigation .nav-stacked a {
-      color: var(--eos-accent);
-    }
-    .user-preferences .instructions {
-      color: var(--eos-accent);
-      margin-bottom: 10px;
-      font-size: 0.8706em;
-      line-height: 1.4;
-    }
-
-    /* Code blocks */
-    pre code,
-    code {
-      background-color: #120d33;
-      border: 1px solid var(--eos-border);
-      border-radius: 6px;
-    }
-    p > code,
-    li > code,
-    pre > code {
-      border: 1px solid var(--eos-border);
-    }
-
-    /* Active tabs */
-    .nav-pills .nav-link.active,
-    .nav-pills > li > a.active {
-      background-color: var(--eos-accent);
-      color: #ffffff;
-    }
-
-    /* Sidebar section headers */
-    .sidebar-section-header {
-      color: var(--eos-text-muted);
-    }
+  .d-icon {
+    color: #fafafa !important;
   }
 }
 
-/* ---------- Light: lavender panel look ---------- */
-@media all { /* light */
-  body:not(.dark-scheme) {
-    background-color: var(--eos-bg-page);
-
-    /* Header: light surface, dark text */
-    .d-header {
-      background-color: var(--eos-bg-card);
-      box-shadow: none;
-      border-bottom: 1px solid var(--eos-border);
-    }
-
-    /* Buttons: purple like the website */
-    .btn-primary,
-    #create-topic {
-      background-color: var(--eos-accent);
-      border-color: var(--eos-accent);
-      color: #ffffff;
-      &:hover,
-      &.btn-hover {
-        background-color: var(--eos-accent-hover);
-        border-color: var(--eos-accent-hover);
-      }
-    }
-
-    /* Secondary buttons: flat, slightly set off */
-    .btn-default {
-      background-color: var(--eos-bg-card);
-      border-color: var(--eos-border);
-      color: var(--eos-text);
-      &:hover {
-        background-color: var(--eos-bg-alt);
-      }
-    }
-
-    /* Links */
-    a {
-      color: var(--eos-accent);
-      &:visited {
-        color: #5b2e8c;
-      }
-    }
-    .topic-list a.title,
-    .raw-topic-link {
-      color: var(--eos-title);
-      &:hover {
-        color: var(--eos-accent);
-      }
-    }
-
-    /* Topic list & cards */
-    .topic-list th {
-      border-bottom-color: var(--eos-border);
-    }
-    .topic-list td {
-      border-top-color: #beb9ca;
-    }
-    .topic-list-item:hover,
-    .latest-topic-list-item:hover,
-    .category-box:hover {
-      background-color: var(--eos-bg-card);
-    }
-
-    /* Category badges */
-    .badge-category__wrapper .badge-category {
-      background-color: #e0d6ef;
-      color: #4a2380;
-    }
-    .badge-wrapper.bullet span.badge-category {
-      color: var(--eos-accent);
-    }
-    .category-list .category .badge-notification {
-      background-color: transparent;
-      color: var(--eos-accent);
-    }
-    .category-list th {
-      color: var(--eos-accent);
-    }
-    .categories-list .category .category-description {
-      margin-top: 0.5em;
-      overflow: hidden;
-      color: var(--eos-text-muted);
-    }
-    .list-cell,
-    .table-heading,
-    .category-list td,
-    .category-list th {
-      color: var(--eos-accent);
-    }
-
-    /* User names & titles */
-    .names span a {
-      color: var(--eos-accent);
-    }
-    .names .fa {
-      font-size: 0.8706em;
-      color: var(--eos-accent);
-    }
-    .names .new_user a,
-    .names .user-title,
-    .names .user-title a {
-      color: var(--eos-accent);
-    }
-
-    /* Flat buttons & post controls */
-    .btn-flat .d-icon {
-      color: #8b8b83;
-    }
-    nav.post-controls .actions a,
-    nav.post-controls .actions button {
-      color: #8b8b83;
-      margin-right: 2px;
-      display: inline-block;
-    }
-
-    /* Reaction buttons (post-retort) */
-    .post-retort {
-      background: var(--secondary);
-      color: #ffffff;
-      border-color: transparent;
-      border-radius: 5px;
-      padding: 6px;
-      &:hover {
-        background: var(--primary-low);
-      }
-      span {
-        background: var(--secondary);
-        color: #ffffff;
-        &::after {
-          display: none;
-        }
-      }
-      .post-retort__tooltip {
-        background: var(--secondary-high);
-        color: #ffffff;
-        z-index: 10;
-      }
-    }
-    .discourse-reactions-picker {
-      height: 35vh;
-      overflow: auto;
-      padding: 0 0.33em;
-    }
-
-    /* Timeline */
-    .timeline-container .topic-timeline .now-date,
-    .timeline-container .topic-timeline .start-date,
-    .timeline-container .topic-timeline .timeline-ago {
-      color: #8b8b83;
-    }
-    .timeline-container .topic-timeline .timeline-handle {
-      border-radius: 0.8em;
-      width: 0.35em;
-      background-color: var(--eos-accent);
-      height: 100%;
-      float: left;
-      z-index: 2;
-    }
-
-    /* Topic-list separators: purple strip like before */
-    .topic-list .topic-list-item-separator td {
-      border-bottom: 1px solid var(--eos-accent);
-      span {
-        background-color: var(--eos-accent);
-        color: #ffffff;
-      }
-    }
-
-    /* "Visited" marker line */
-    .small-action.topic-post-visited .topic-post-visited-line {
-      text-align: center;
-      border-bottom: 1px solid var(--eos-accent);
-      line-height: 0.1em;
-      margin: 1rem 0px;
-      width: 100%;
-      .topic-post-visited-message {
-        background-color: var(--secondary);
-        color: var(--eos-accent);
-        font-size: var(--font-down-1);
-        padding: 0 8px;
-      }
-    }
-
-    /* User secondary nav & preference hints */
-    .user-secondary-navigation .nav-stacked a {
-      color: var(--eos-accent);
-    }
-    .user-preferences .instructions {
-      color: var(--eos-accent);
-      margin-bottom: 10px;
-      font-size: 0.8706em;
-      line-height: 1.4;
-    }
-
-    /* Inline code */
-    code {
-      background: #eee9ee;
-      padding: 0 0.25em;
-      border-radius: 0.25em;
-      display: inline-block;
-    }
-    p > code,
-    li > code,
-    pre > code {
-      border: 1px solid #eee;
-    }
-    pre code {
-      background-color: #efedf4;
-    }
-
-    /* Active tabs */
-    .nav-pills .nav-link.active,
-    .nav-pills > li > a.active {
-      background-color: var(--eos-accent);
-      color: #ffffff;
-    }
-
-    /* Sidebar section headers */
-    .sidebar-section-header {
-      color: var(--eos-text-muted);
-    }
-  }
-}
-
-/* ---------- both variants: top-menu & soft transitions ---------- */
-.top-menu .menu-item {
+/* Typography adjustment for menus */
+body .top-menu .menu-item {
   font-size: 0.95em;
 }
-.btn,
-.badge-category,
-.d-header {
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+
+/* Post reactions and retort styling */
+.post-retort {
+  background: var(--secondary);
+  color: #ffffff;
+  border-color: transparent;
+  border-radius: 5px;
+  padding: 6px;
+
+  &:hover {
+    background: var(--primary-low);
+  }
+
+  .post-retort__tooltip {
+    background: var(--secondary-high);
+    color: #ffffff;
+    z-index: 10;
+  }
+
+  span {
+    background: var(--secondary);
+    color: #ffffff;
+
+    &::after {
+      display: none;
+    }
+  }
 }
 
-/* Palette-independent spacing (from old theme overrides) */
 .post-controls > button:first-child {
   margin-left: 5px;
 }
-.latest-topic-list .table-heading,
-.top-topic-list .table-heading {
-  padding: 12px 5px;
+
+/* Topic list separators and markers */
+body .topic-list .topic-list-item-separator td {
+  border-bottom: 1px solid #7c62b3;
+
+  span {
+    background-color: #7c62b3;
+    color: #ffffff;
+  }
+}
+
+/* Visited markers for threads */
+body .small-action.topic-post-visited {
+  .topic-post-visited-line {
+    text-align: center;
+    border-bottom: 1px solid #7c62b3;
+    line-height: 0.1em;
+    margin: 1rem 0;
+    width: 100%;
+
+    .topic-post-visited-message {
+      background-color: var(--secondary);
+      color: #7c62b3;
+      font-size: var(--font-down-1);
+      padding: 0 8px;
+    }
+  }
+}
+
+/* Primary button styling */
+.btn-primary {
+  background-color: #3c305d !important;
+  color: #ffffff !important;
+
+  &:hover {
+    background-color: #4c3d75 !important;
+  }
+}
+
+/* Picker panel for reactions */
+.discourse-reactions-picker {
+  height: 35vh;
+  overflow: auto;
+  padding: 0 0.33em;
 }
