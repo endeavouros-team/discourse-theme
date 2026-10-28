@@ -1,46 +1,40 @@
-# EndeavourOS Forum Theme — Discourse Theme Component
+# EndeavourOS Discourse Theme — Dark EndeavourOS Purple
 
-Theme component for forum.endeavouros.org, derived from the 2026 redesign of
-endeavouros.com and the wiki.
+A custom dark theme for Discourse, for the EndeavourOS forum.
 
-Light Lavender is the default; Dark Navy activates automatically
-whenever a dark color scheme is active (`html.dark-scheme`).
+## Palette (`about.json`)
 
-## Palette
-
-| Role | Dark | Light |
+| Role / Key | Hex | Description |
 |---|---|---|
-| Page background | `#07041a` | `#cccad3` |
-| Header | `#090629` | `#cfced3` |
-| Panels/Sidebar | `#0b0730` | `#cbc9d1` |
-| Cards | `#110d35` | `#cfced3` |
-| Primary accent (buttons) | `#6934a0` | `#6934a0` |
-| Secondary accent | `#6968d3` | `#6934a0` |
-| Text | `#c9c5e6` | `#0d0a25` |
-| Titles | `#f2effb` | `#0d0a25` |
+| Text (`primary`) | `#fafafa` | Primary text color |
+| Page background (`secondary`) | `#150a24` | Main page background |
+| Buttons / Actions (`tertiary`) | `#3c305d` | Interactive buttons & accents |
+| Borders / Highlights (`quaternary`) | `#7c62b3` | Borders, lines & secondary accents |
+| Header background (`header_background`) | `#341b5f` | Top navigation bar background |
+| Header text (`header_primary`) | `#fafafa` | Text color in top navigation bar |
+| Highlight (`highlight`) | `#2a1845` | Highlighting backgrounds |
+| Selected (`selected`) | `#d1f0ff` | Selected elements state |
+| Hover (`hover`) | `#f2f2f2` | Hover fallback state |
+| Danger (`danger`) | `#e45735` | Error & deletion states |
+| Success (`success`) | `#009900` | Success messages & status |
+| Love (`love`) | `#fa6c8d` | Likes & reaction highlights |
+
+## Layout Overrides (`common/common.scss`)
+
+| Component | Hex |
+|---|---|
+| Sidebar background | `#1c0e2f` |
 
 ## Installation
 
-1. Admin → Appearance → **Themes & components** → **Install** (top right)
-   → **From a git repository** → paste the repo URL into
-   "Repository containing theme":
-   `https://github.com/endeavouros-team/discourse-theme`
-2. Add the component to the active default theme
-   (Edit on the theme → Components → add).
-3. Make sure a light and a dark **color palette** exist and are user-selectable
-   (Admin → Appearance → Color palettes): the component reacts to whichever
-   scheme is active, switching automatically between light and dark.
-
-## Customizing
-
-All colors are centralized in `common/color_definitions.scss` under
-`:root { --eos-… }` (one block per variant).
+1. Admin → Appearance → **Themes** → **Install** (top right)
+2. Upload the theme ZIP package directly or install it via Git repository.
+3. Set **Dark EndeavourOS Purple** as default or assign it as needed.
 
 ## Files
 
-- `about.json` — theme metadata
-- `common/color_definitions.scss` — color variables (dark + light)
-- `common/common.scss` — structural overrides (header, buttons, topic list, …)
+- `about.json` — Theme metadata and Discourse color palette configuration.
+- `common/common.scss` — Structural layout overrides for headers, sidebars, buttons, and dropdowns.
 
 ## License
 
