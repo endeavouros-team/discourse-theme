@@ -1,9 +1,29 @@
 {
-  "name": "EndeavourOS Forum Theme",
-  "about_url": "https://github.com/endeavouros-team/discourse-theme",
-  "license_url": "https://github.com/endeavouros-team/discourse-theme/blob/main/LICENSE",
-  "authors": "joekamprad",
-  "theme_version": "1.0.0",
-  "minimum_discourse_version": "3.1.0",
-  "component": true
+  "name": "Dark Endeavour Purple",
+  "component": false,
+  "license_url": null,
+  "about_url": null,
+  "authors": null,
+  "theme_version": null,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {},
+  "color_schemes": {
+    "Dark Endeavour Purple": {
+      "primary": "fafafa",
+      "secondary": "150a24",
+      "tertiary": "3c305d",
+      "quaternary": "7c62b3",
+      "header_background": "341b5f",
+      "header_primary": "fafafa",
+      "highlight": "2a1845",
+      "selected": "d1f0ff",
+      "hover": "f2f2f2",
+      "danger": "e45735",
+      "success": "009900",
+      "love": "fa6c8d"
+    }
+  },
+  "modifiers": {},
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
 }
