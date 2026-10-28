@@ -34,6 +34,7 @@ A custom dark theme for Discourse, for the EndeavourOS forum.
 ## Files
 
 - `about.json` — Theme metadata and Discourse color palette configuration.
+- `common/color_definitions.scss` — SCSS color variables.
 - `common/common.scss` — Structural layout overrides for headers, sidebars, buttons, and dropdowns.
 
 ## License
