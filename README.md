@@ -1,4 +1,4 @@
-# EndeavourOS Discourse Theme — Dark EndeavourOS Purple
+# EndeavourOS Discourse Theme — Dark Purple
 
 A custom dark theme for Discourse, for the EndeavourOS forum.
 ## [WIP] - help needed - feel free to contribute
@@ -26,8 +26,8 @@ A custom dark theme for Discourse, for the EndeavourOS forum.
 |---|---|
 | Sidebar background | `#1c0e2f` |
 
-## Installation
-
+## Installation/Testing
+A. https://discourse.theme-creator.io to test
 1. Admin → Appearance → **Themes** → **Install** (top right)
 2. Upload the theme ZIP package directly or install it via Git repository.
 3. Set **Dark EndeavourOS Purple** as default or assign it as needed.
